@@ -8,7 +8,7 @@ N/A
 
 ### Run command
 
-`gradle test`
+`gradle test -i`
 
 ### Notes
 

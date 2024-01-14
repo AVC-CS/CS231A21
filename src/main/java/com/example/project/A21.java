@@ -1,24 +1,34 @@
 package com.example.project;
 
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
-public class A21 {
+class A21 {
+    static void getRdnum(int rdnum[]) {
+        /*****************************************
+         * Code your program here
+         *****************************************/
 
-    static int getMed(int n1, int n2, int n3) {
-        int result = 0;
+    }
 
-        return result;
+    static int getMed(int num[]) {
+        /*****************************************
+         * Code your program here
+         *****************************************/
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Console con = System.console();
 
-        int n1 = sc.nextInt();
-        int n2 = sc.nextInt();
-        int n3 = sc.nextInt();
+        int[] num = new int[3];
+        getRdnum(num);
+        con.writer().printf("The random numbers are: ");
+        for (int i = 0; i < 3; i++) {
+            con.writer().printf("%d\t", num[i]);
+        }
+        con.writer().println();
 
-        int result = getMed(n1, n2, n3);
+        int result = getMed(num);
         System.out.println("Result Median " + result);
-        sc.close();
     }
 }

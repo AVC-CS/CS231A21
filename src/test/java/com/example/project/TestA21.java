@@ -8,31 +8,48 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import java.io.*;
+import java.util.*;
 
 public class TestA21 {
 
   @Test
-  public void testHelloWorld() {
+  public void testA21() {
+    /* System output redirection */
+    // PrintStream originalOut = System.out;
+    // ByteArrayOutputStream bos = new ByteArrayOutputStream();
+    // System.setOut(new PrintStream(bos));
+
+    /* For Test */
     int result;
-    PrintStream originalOut = System.out;
-    ByteArrayOutputStream bos = new ByteArrayOutputStream();
-    System.setOut(new PrintStream(bos));
+    int[] num = new int[3];
 
     // action
-    // A21.main(null);
-    result = A21.getMed(10, 20, 30);
+    // Test 1
+    A21.getRdnum(num);
+    Arrays.sort(num);
+    int ans = num[1];
+
+    System.out.println("Random numbers " + num[0] + " " + num[1] + " " + num[2]);
+    System.out.println("Answer " + ans);
+    result = A21.getMed(num);
 
     // assertion
     // assertEquals("Hello world!\n", bos.toString());
-    assertEquals(result, 20);
+    assertEquals(result, ans);
 
-    result = A21.getMed(15, 10, 30);
-    assertEquals(result, 15);
-    result = A21.getMed(15, 10, 5);
-    assertEquals(result, 10);
-    result = A21.getMed(10, 20, 15);
-    assertEquals(result, 15);
+    // Test 2
+    A21.getRdnum(num);
+    Arrays.sort(num);
+    ans = num[1];
+
+    System.out.println("Random numbers " + num[0] + " " + num[1] + " " + num[2]);
+    System.out.println("Answer " + ans);
+    result = A21.getMed(num);
+
+    // assertion
+    // assertEquals("Hello world!\n", bos.toString());
+    assertEquals(result, ans);
     // undo the binding in System
-    System.setOut(originalOut);
+    // System.setOut(originalOut);
   }
 }
